@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>localstorage</title>
+	<meta charset="UTF-8">
+    <script language="javascript">
+	   if(!window.localStorage){
+           alert("浏览器不支持localstorage");
+           return false;
+        } else {
+			var no=document.getElementById("no");
+			value=localStorage.getItem('no');
+		    if (value != null) {
+                no.value = value;
+            } else {
+                no.value = 0;
+            }
+		}
+		var Btn = document.getElementById("btn");
+            Btn.onclick =function (){
+			   var no=localStorage.getElementById("no");
+			   val=++no.value;
+			   localStorage.setItem('no',val);
+		    }     
+        }
+		
+	</script>
+</head>
+
+<body> 
+    <input id="no">
+	<button id="btn">+</button>
+</body>
+</html>
